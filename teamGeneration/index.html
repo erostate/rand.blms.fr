@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="icon" href="https://asset.blms.fr/logo/favicon.png">
+</head>
+<body>
+    <header>
+        <img src="https://asset.blms.fr/logo/logo2_dark.png" alt="BLMS - Logo">
+        <div></div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="header">
+                <h1>Random team generation</h1>
+                <span>
+                    <p>Choose the number of <b>team</b></p>
+                    <input type="number" id="numberOfTeam" value="2">
+                </span>
+            </div>
+            <hr>
+            <div class="content" id="nameList">
+                <h3>Name list</h3>
+                <br>
+                <input type="text" id="name1" placeholder="Name 1">
+                <input type="text" id="name2" placeholder="Name 2">
+                <input type="text" id="name3" placeholder="Name 3">
+                <input type="text" id="name4" placeholder="Name 4">
+                <!-- <span class="list-name-wrapper" id="name5_container">
+                    <input type="text" id="name5" placeholder="Name 5">
+                    <i class="fa-solid fa-xmark"></i>
+                </span> -->
+                <button onclick="addRowName();" id="addName" class="btn-add-row">Add row</button>
+            </div>
+            <div class="generate">
+                <button onclick="generateTeam();" class="btn">Generate</button>
+            </div>
+            <!-- <p>Does not have an account ? <a href="/register">Register now</a></p> -->
+        </section>
+
+        <section class="history" id="historyGeneration">
+            <h1>History</h1>
+            <!-- <div class="preview" onclick="openHistory()">
+                <div>
+                    <p><b id="historyNbTeam">3</b> teams</p>
+                </div>
+                <div>
+                    <p><b id="historyNbName">7</b> people</p>
+                </div>
+                <div>
+                    <p><b id="historyDate">2024-02-09</b></p>
+                </div>
+            </div> -->
+        </section>
+    </main>
+    
+    <!-- MODAL -->
+    <div class="modal" id="modalGenerationTeam">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modalGenerationTeam')">&times;</span>
+                <h2>Team generation</h2>
+            </div>
+            <div class="modal-error" id="modalError" style="display: none;"></div>
+            <div class="modal-body team-list" id="teamList">
+                <div class="team" id="team1">
+                    <h3>Team 1</h3>
+                    <hr>
+                    <ul id="team1List">
+                        <li>Player 1</li>
+                        <li>Player 2</li>
+                    </ul>
+                </div>
+                <div class="team" id="team2">
+                    <h3>Team 2</h3>
+                    <hr>
+                    <ul id="team2List">
+                        <li>Player 3</li>
+                        <li>Player 4</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="generateTeam();" class="btn">Generate again</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MODAL -->
+    <div class="modal" id="modalHistory">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close" onclick="closeModal('modalHistory')">&times;</span>
+                <h2>Team generation | History</h2>
+            </div>
+            <div class="modal-body team-list" id="teamListHistory">
+                
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/aa0e32bf0a.js" crossorigin="anonymous"></script>
+    <script src="../assets/script.js"></script>
+</body>
+</html>
